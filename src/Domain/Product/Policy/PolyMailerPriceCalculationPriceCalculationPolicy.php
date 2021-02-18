@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace App\Domain\Product\Policy;
 
-use App\Domain\Product\Entity\Product;
+use App\Domain\Product\Product;
 use App\Domain\Product\Specification\Specification;
 use App\Domain\Product\Specification\TransparentBoxSpecification;
 use App\Domain\Product\ValueObject\PolyMailer;
 
-class PolyMailerPriceCalculationPolicy implements Policy
+class PolyMailerPriceCalculationPriceCalculationPolicy implements PriceCalculationPolicy
 {
     private const BASE_PRICE_MULTIPLIER = 0.1;
     private const PRICE_MULTIPLIER_FOR_TRANSPARENT_BOX = 0.15;

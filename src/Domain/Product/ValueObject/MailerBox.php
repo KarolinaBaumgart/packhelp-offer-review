@@ -46,6 +46,11 @@ class MailerBox implements BoxType
         $this->length = $length;
     }
 
+    public function key():string
+    {
+
+    }
+
     public function width(): int
     {
         return $this->width;

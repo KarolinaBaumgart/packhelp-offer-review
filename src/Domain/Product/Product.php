@@ -1,8 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Domain\Product\Entity;
-
+namespace App\Domain\Product;
 
 use App\Domain\Product\ValueObject\BoxType;
 use Symfony\Component\Validator\Constraints as Assert;

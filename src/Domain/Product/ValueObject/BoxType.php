@@ -5,5 +5,5 @@ namespace App\Domain\Product\ValueObject;
 
 interface BoxType
 {
-
+    public function key(): string;
 }
