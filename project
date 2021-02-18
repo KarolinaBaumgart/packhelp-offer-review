@@ -8,6 +8,8 @@ print_help() {
 
 compose_start() {
   docker-compose up --build -d
+  docker-compose exec app chown -R owner:owner .
+  docker-compose exec -u owner app composer install
 }
 
 compose_down() {

@@ -33,5 +33,3 @@ EXPOSE 80
 
 HEALTHCHECK --start-period=1m --interval=10s CMD curl --fail --silent -o /dev/null http://127.0.0.1:80/ || exit 1
 ENTRYPOINT [ "/app/docker/entrypoint.sh" ]
-
-

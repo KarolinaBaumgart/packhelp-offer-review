@@ -7,6 +7,8 @@ PROJECT_DIR="$(realpath $BIN_DIR'/../')/";
 
 cd $PROJECT_DIR
 
+su owner
+
 composer install
 
 exec php -S 0.0.0.0:80 -t public/
