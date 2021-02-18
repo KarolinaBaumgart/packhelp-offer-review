@@ -1,0 +1,38 @@
+version: '3.1'
+
+services:
+  app:
+    build:
+      context: ./docker
+      args:
+        - INSTALL_XDEBUG=true
+    depends_on:
+      - db
+    volumes:
+      - ./:/app
+      - ./docker/xdebug.ini:/usr/local/etc/php/conf.d/xdebug.ini
+    env_file:
+      - .env
+    ports:
+      - 8080:80
+    networks:
+      - stack
+  db:
+    image: mysql:8.0
+    restart: on-failure
+    ports:
+      - 3307:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=toor
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=db
+      - MYSQL_DATABASE=db
+    volumes:
+      - interview-db:/var/lib/mysql
+    networks:
+      - stack
+networks:
+  stack:
+
+volumes:
+  interview-db:
